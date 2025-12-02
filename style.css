@@ -1,0 +1,242 @@
+/* Variables CSS para facilitar cambios de color */
+:root {
+    --primary-color: #007bff; /* Azul vibrante (eFootball/Konami) */
+    --secondary-color: #f7a601; /* Naranja/Amarillo para acentos */
+    --background-color: #121212; /* Fondo muy oscuro */
+    --card-background: #2a2a2a; /* Fondo de cartas */
+    --text-color: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    --border-radius: 12px;
+}
+
+/* --- Estilos Generales --- */
+body {
+    font-family: 'Russo One', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Superposición de fondo sutil */
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+    backdrop-filter: blur(2px);
+    z-index: -1;
+}
+
+/* --- Contenedor Principal --- */
+.container {
+    width: 90%;
+    max-width: 450px;
+    background: rgba(42, 42, 42, 0.95);
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px var(--shadow-color);
+    position: relative;
+    padding: 20px;
+    min-height: 500px; 
+}
+
+/* --- Estilos de Sección y Transición --- */
+.section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.section.active {
+    opacity: 1;
+    pointer-events: auto;
+    position: relative;
+}
+
+.content-box {
+    width: 100%;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    background: #1e1e1e;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+}
+
+.content-box.big {
+    padding: 20px 10px;
+}
+
+h2 {
+    color: var(--secondary-color);
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+/* --- Formulario e Inputs --- */
+.logo {
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 25px;
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    background-color: #333;
+    color: var(--text-color);
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+    font-family: inherit;
+    text-align: center;
+}
+
+input[type="text"]::placeholder {
+    color: #aaa;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+}
+
+/* --- Botones --- */
+button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 15px 30px;
+    border-radius: var(--border-radius);
+    font-size: 1.1em;
+    cursor: pointer;
+    width: 100%;
+    font-family: inherit;
+    transition: background-color 0.3s, transform 0.1s;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* --- Grid de Cartas (Secciones 2 y 4) --- */
+.cards-grid {
+    display: grid;
+    /* Define 3 columnas para la disposición solicitada: 3x2 */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+.card {
+    background-color: var(--card-background);
+    padding: 5px;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    overflow: hidden;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card.selected {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 10px var(--secondary-color);
+    transform: scale(1.05);
+}
+
+/* Estilo específico para el texto en las cartas de moneda/gp */
+.card div {
+    font-size: 0.8em !important; 
+    margin-top: 4px !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* --- Sección 3: Loading --- */
+#searchingPlayer {
+    color: var(--primary-color);
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+#loadingText {
+    color: #ccc;
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+/* Animación de Spinner */
+.spinner {
+    border: 8px solid #333;
+    border-top: 8px solid var(--primary-color);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    margin: 30px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* --- Sección 4: Confetti y Final --- */
+#section4 h2 {
+    color: var(--secondary-color);
+}
+
+#section4 p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+/* Media Queries para mejor responsividad */
+@media (min-width: 600px) {
+    .container {
+        padding: 40px;
+    }
+    .content-box {
+        padding: 40px;
+    }
+}
