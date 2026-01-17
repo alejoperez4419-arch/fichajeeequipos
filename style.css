@@ -12,8 +12,8 @@
 ========================= */
 body {
   font-family: 'Russo One', sans-serif;
-  background: radial-gradient(circle at top, #081a2e, #02070d);
-  color: #eafcff;
+  background: radial-gradient(circle at top, #1a0b2e, #070010);
+  color: #f2e9ff;
   min-height: 100vh;
   overflow-x: hidden;
 }
@@ -25,8 +25,8 @@ body {
   position: fixed;
   inset: 0;
   background:
-    linear-gradient(120deg, rgba(0,255,255,0.12), transparent 40%),
-    linear-gradient(-120deg, rgba(0,160,255,0.10), transparent 40%);
+    linear-gradient(120deg, rgba(170,90,255,0.15), transparent 40%),
+    linear-gradient(-120deg, rgba(0,200,255,0.12), transparent 40%);
   z-index: -1;
 }
 
@@ -70,13 +70,13 @@ body {
    CONTENT BOX (GLASS)
 ========================= */
 .content-box {
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(18px);
   border-radius: 20px;
   padding: 25px;
   text-align: center;
   box-shadow:
-    0 0 30px rgba(0,220,255,0.35),
+    0 0 35px rgba(180,100,255,0.45),
     inset 0 0 20px rgba(255,255,255,0.05);
 }
 
@@ -90,7 +90,7 @@ body {
 .logo {
   width: 100%;
   margin-bottom: 25px;
-  filter: drop-shadow(0 0 20px #00e5ff);
+  filter: drop-shadow(0 0 22px #b46bff);
 }
 
 /* =========================
@@ -105,13 +105,13 @@ input {
   outline: none;
   font-size: 16px;
   background: rgba(0, 0, 0, 0.65);
-  color: #9fffd0;
+  color: #f0d9ff;
   text-align: center;
-  box-shadow: inset 0 0 10px rgba(0,255,200,0.25);
+  box-shadow: inset 0 0 12px rgba(180,100,255,0.35);
 }
 
 input::placeholder {
-  color: #9bdfff;
+  color: #caa6ff;
 }
 
 /* =========================
@@ -125,17 +125,17 @@ button {
   border: none;
   font-size: 16px;
   cursor: pointer;
-  background: linear-gradient(135deg, #00e5ff, #6affb7);
-  color: #002025;
+  background: linear-gradient(135deg, #b46bff, #00d9ff);
+  color: #140021;
   text-transform: uppercase;
   letter-spacing: 1px;
-  box-shadow: 0 0 25px rgba(0,220,255,0.7);
+  box-shadow: 0 0 30px rgba(180,100,255,0.8);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 40px rgba(0,255,200,1);
+  transform: scale(1.06);
+  box-shadow: 0 0 45px rgba(0,220,255,1);
 }
 
 /* =========================
@@ -144,8 +144,8 @@ button:hover {
 h2 {
   margin-bottom: 15px;
   font-size: 22px;
-  color: #9befff;
-  text-shadow: 0 0 14px rgba(0,220,255,0.9);
+  color: #e2c8ff;
+  text-shadow: 0 0 16px rgba(180,100,255,1);
 }
 
 p {
@@ -168,14 +168,14 @@ p {
    CARD
 ========================= */
 .card {
-  background: linear-gradient(145deg, #0c2a3a, #06151f);
+  background: linear-gradient(145deg, #220b3d, #0d0318);
   border-radius: 14px;
   padding: 8px;
   cursor: pointer;
   position: relative;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   box-shadow:
-    0 0 12px rgba(0,200,255,0.35),
+    0 0 15px rgba(180,100,255,0.45),
     inset 0 0 8px rgba(255,255,255,0.05);
 }
 
@@ -185,15 +185,15 @@ p {
 }
 
 .card:hover {
-  transform: translateY(-6px) scale(1.05);
-  box-shadow: 0 0 35px rgba(0,255,200,0.9);
+  transform: translateY(-6px) scale(1.06);
+  box-shadow: 0 0 40px rgba(0,220,255,1);
 }
 
 .card.selected {
-  outline: 3px solid #6affb7;
+  outline: 3px solid #ff4fd8;
   box-shadow:
-    0 0 45px rgba(0,255,200,1),
-    inset 0 0 20px rgba(0,255,200,0.6);
+    0 0 50px rgba(255,80,220,1),
+    inset 0 0 20px rgba(255,80,220,0.6);
 }
 
 /* =========================
@@ -205,9 +205,9 @@ p {
   border-radius: 50%;
   margin: 20px auto;
   border: 6px solid rgba(255,255,255,0.15);
-  border-top: 6px solid #00e5ff;
-  animation: spin 1.5s linear infinite;
-  box-shadow: 0 0 25px rgba(0,220,255,0.9);
+  border-top: 6px solid #b46bff;
+  animation: spin 1.3s linear infinite;
+  box-shadow: 0 0 30px rgba(180,100,255,1);
 }
 
 @keyframes spin {
@@ -221,7 +221,7 @@ p {
 ========================= */
 #loadingText {
   margin-top: 10px;
-  color: #bff7ff;
+  color: #f0d9ff;
   font-size: 15px;
   letter-spacing: 1px;
 }
@@ -231,7 +231,6 @@ p {
 ========================= */
 #finalCards .card {
   animation: pop 0.5s ease;
-
 }
 
 @keyframes pop {
