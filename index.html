@@ -1,70 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Efootball Generator</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Efootball Generator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+
 </head>
 
 <body>
+  <!-- Fondo general -->
+  <div class="background-overlay"></div>
+  <div class="container">
+    <!-- SECTION 1 -->
+    <section id="section1" class="section active">
+      <div class="content-box">
+        <img
+          src="logo.png"
+          alt="Efootball Logo" class="logo">
+        <input type="text" id="playerID" placeholder="Enter your ID" required>
+        <button onclick="goToCards()">Next</button>
+      </div>
+    </section>
 
-    <div class="background-overlay"></div>
+    <!-- SECTION 2 -->
+    <section id="section2" class="section">
+      <div class="content-box big">
+        <h2>Select your cards</h2>
+        <div id="cardsContainer" class="cards-grid"></div>
+        <button onclick="goToSearching()">Continue</button>
+      </div>
+    </section>
 
-    <div class="container">
+    <!-- SECTION 3 -->
+    <section id="section3" class="section">
+      <div class="content-box">
+        <h2>Searching player...</h2>
+        <p id="searchingPlayer"></p>
+        <div class="spinner"></div>
+        <p id="loadingText">Loading...</p>
+      </div>
+    </section>
 
-        <!-- SECTION 1 -->
-        <section id="section1" class="section active">
-            <div class="content-box">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/EFootball_logo_-_alternative_colored_version.svg/2560px-EFootball_logo_-_alternative_colored_version.svg.png" alt="Efootball Logo" class="logo">
+    <!-- SECTION 4 -->
+    <section id="section4" class="section">
+      <div class="content-box">
+        <h2>🎉 Congratulations</h2>
+        <p>You have received Efootball rewards</p>
+        <div id="finalCards" class="cards-grid"></div>
+        <button onclick="restart()">Generate again</button>
+      </div>
+    </section>
+  </div>
 
-                <input type="text" id="playerID" placeholder="Enter your ID" required>
-
-                <button onclick="goToCards()">Next</button>
-            </div>
-        </section>
-
-        <!-- SECTION 2 -->
-        <section id="section2" class="section">
-            <div class="content-box big">
-                <h2>Select your Items</h2>
-
-                <div id="cardsContainer" class="cards-grid"></div>
-
-                <button onclick="goToSearching()">Continue</button>
-            </div>
-        </section>
-
-        <!-- SECTION 3 -->
-        <section id="section3" class="section">
-            <div class="content-box">
-                <h2>Searching player...</h2>
-                <p id="searchingPlayer"></p>
-
-                <div class="spinner"></div>
-
-                <p id="loadingText">Loading...</p>
-            </div>
-        </section>
-
-        <!-- SECTION 4 -->
-        <section id="section4" class="section">
-            <div class="content-box">
-                <h2>🎉 Congratulations</h2>
-                <p>You have received Efootball rewards</p>
-
-                <div id="finalCards" class="cards-grid"></div>
-
-                <button onclick="restart()">Generate again</button>
-            </div>
-        </section>
-
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-    <script src="main.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="main.js"></script>
 </body>
+
 </html>
