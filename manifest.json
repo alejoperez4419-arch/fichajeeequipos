@@ -1,6 +1,6 @@
 {
-  "name": "Admin 2026 Efootball",
-  "short_name": "Admin 2026 Efootball",
+  "name": "eFootball Mod 2026",
+  "short_name": "eFootball Mod 2026",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
@@ -9,7 +9,7 @@
   "orientation": "portrait",
   "icons": [
     {
-      "src": "app.png",
+      "src": "app192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
