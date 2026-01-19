@@ -15,7 +15,7 @@
       "purpose": "any maskable"
     },
     {
-      "src": "app.png",
+      "src": "app192.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
